@@ -1,1 +1,8 @@
-
+Create script which contain username and password of vpn
+  #!/bin/sh
+  password=$(cat /my/very/secure/vpn/password.txt)
+  echo "$password" | /usr/sbin/openconnect --user codyc4321 --passwd-on-stdin
+  
+Now, call the script with sudo:
+  pw=$(cat /my/very/secure/sudo/password.txt)
+  echo "$pw" | sudo -S vpn.sh
